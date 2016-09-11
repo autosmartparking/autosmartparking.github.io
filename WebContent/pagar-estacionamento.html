@@ -25,6 +25,11 @@
     <meta name="msapplication-TileImage" content="img/icon.png">
     <meta name="msapplication-TileColor" content="#F2F2F2">
 
+    <script>
+    if (window.location.protocol != "https:" && window.location.hostname == "sergiolopes.github.io")
+        window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+    </script>
+
 </head>
 <body>
 <div class="current-page">
@@ -92,7 +97,7 @@
 <div id="scan" class="modal">
 	<div class="modal-content">
 		<h5>Escaneie o Ticket</h5>
-		<button class="btn orange modal-close">Fechar</button></div>
+		<div><button class="btn orange codetest">carregar teste</button> <button class="btn orange modal-close">fechar</button></div>
 		<div id="interactive" class="viewport"></div>
 	</div>
 </div>
