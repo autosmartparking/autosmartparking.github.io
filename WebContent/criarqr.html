@@ -1,0 +1,33 @@
+<html>
+<head>
+  <meta name="description" content="QRCode scanner" />
+  <meta name="keywords" content="qrcode,scanner,barcode, javascript" />
+  <meta name="language" content="English" />
+  <meta name="copyright" content="Lazar Laszlo (c) 2011" />
+  <meta name="Revisit-After" content="1 Days"/>
+  <meta name="robots" content="index, follow"/>
+<title>Criar QR Code</title>
+
+<script type="text/javascript">
+
+function create()
+{
+    var data=document.getElementById("dados").value;
+    document.getElementById("destino").innerHTML="<img src='https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl="+encodeURIComponent(dados)+"'/>";
+}
+
+</script>
+</head>
+
+<body >
+<form>
+	<input type="text" id="dados"/>
+	<br><br>
+	<input type="button" value="Criar QR" onClick="create()"/>
+</form>
+<br><br>
+<div id="destino" align="center">
+</div>
+
+</body>
+</html>

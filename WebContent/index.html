@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br" Xmanifest="appcache.manifest">
+<head>
+<meta charset="ISO-8859-1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Smart Parking</title>
+<meta name="description" content="WebApp de exemplo">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Adiciona atalho para Chrome no Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="img/icon.png">
+    <meta name="theme-color" content="#F77F00">
+
+    <!-- Adiciona atalho para Safari no iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Shopping">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon-precomposed" href="img/icon.png">
+
+    <!-- Icone para Win8 (144x144) -->
+    <meta name="msapplication-TileImage" content="img/icon.png">
+    <meta name="msapplication-TileColor" content="#F77F00">
+</head>
+<body>
+
+<div class="current-page">
+
+
+<main class="home">
+	
+	<h1 class="z-depth-1">SMART PARKING</h1>
+
+	<div class="collection z-depth-1">
+		<a href="estacionamentos.html" class="collection-item waves-effect">
+			<i class="material-icons">place</i>
+			Encontrar estacionamentos
+		</a>
+		
+		<a href="pagar-estacionamento.html" class="collection-item wafes effect">
+			<i class="material-icons">directions_car</i>
+			Pagar Estacionamento
+		</a>	
+		
+		<a href="#" class="collection-item waves-effect">
+			<i class="material-icons">work</i>
+			Quem somos
+		</a>
+	</div>
+
+</main>
+
+</div><!--/.current-page-->
+
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/materialize-0.97.0.min.js"></script>
+<script src="js/spa.js"></script>
+<script src="js/main.js"></script>
+<script src="js/install.js"></script>
+
+<script src="js/pagamento.js"></script>
+<script src="js/vendor/quagga.min.js"></script>
+<script src="js/barcode.js"></script>
+
+</body>
+</html>
