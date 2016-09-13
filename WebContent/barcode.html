@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Starter Template for Bootstrap</title>
+        <!-- Bootstrap core CSS -->
+        <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
+ 
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Leandro Lisua</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Gerando Codigo de Barras</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+        <div class="container">
+            <div class="screen">
+                <div>
+                    <div class="starter-template">
+                        <h1>Conteudo do site vai aqui.</h1>
+                        <p class="lead">
+                            Use qualquer coisa que quiser.<br> Qualquer HTML que quiser pode usar aqui.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="barcodeDiv">
+ 
+            </div>
+        </div>
+        <!-- /.container -->
+        <!-- Bootstrap core JavaScript -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://ll.leandrolisura.com.br/wp-content/uploads/2015/07/bytescoutbarcode128_1.00.07.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var numberBegin = 1;
+                var numberEnd = 101;
+                html = "";
+                //for (i = numberBegin; i <= numberEnd; i++) {
+                    html += '<div class="row" >';
+                    //for (j = 0; j < 4; j++) {
+                        html +=
+                            '    <div class="col-md-3">' +
+                            '        <img id="barcodeImage_' + 3 + '" class="codeBarImage" />' +
+                            '    </div>';
+                        //i++;
+                    //}
+                    //i--;
+                    html += '</div>';
+                //}
+                $("#barcodeDiv").append(html);
+                    <!--i recebe um valor randomico que será o código de barras -->
+                    i = Math.floor(Math.random() * 100 + 1);
+                    number = pad_with_zeroes(i, 7);
+                    updateBarcode(number, '#barcodeImage_' + 3);
+               
+            });
+            function updateBarcode(barCodeValue, tagId) {
+                barCodeValue = typeof barCodeValue !== 'undefined' ? barCodeValue : '1234567890';
+                var barcode = new bytescoutbarcode128();
+                barcode.valueSet(barCodeValue);
+                barcode.setMargins(5, 5, 5, 5);
+                barcode.setBarWidth(2);
+                var width = barcode.getMinWidth();
+                barcode.setSize(width, 100);
+                var barcodeImage = $(tagId);
+                barcodeImage.attr('src', barcode.exportToBase64(width, 100, 0));
+            }
+ 
+            function pad_with_zeroes(number, length) {
+                var my_string = '' + number;
+                while (my_string.length < length) {
+                    my_string = '0' + my_string;
+                }
+                return my_string;
+            }
+        </script>
+    </body>
+</html>
