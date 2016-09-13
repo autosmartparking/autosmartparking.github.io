@@ -35,7 +35,7 @@
         <script type="text/javascript">
             $(document).ready(function () {
                 var numberBegin = 1;
-                var numberEnd = 101;
+                var numberEnd = 65537;
                 html = "";
                 //for (i = numberBegin; i <= numberEnd; i++) {
                     html += '<div class="row" >';
@@ -51,7 +51,7 @@
                 //}
                 $("#barcodeDiv").append(html);
                     <!--i recebe um valor randomico que será o código de barras -->
-                    i = Math.floor(Math.random() * 100 + 1);
+                    i = Math.floor(Math.random() * 65536);
                     number = pad_with_zeroes(i, 7);
                     updateBarcode(number, '#barcodeImage_' + 3);
                
